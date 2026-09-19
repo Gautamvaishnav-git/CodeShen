@@ -9,6 +9,7 @@ import {
   repositoryDocumentId,
 } from './ids';
 import { buildKnowledgeArtifacts } from './knowledge';
+import { knowledgeBaseSourceQuery } from './knowledgeBase';
 import { persistAnalysis } from './persist';
 import type {
   AnalysisPersistenceInput,
@@ -154,5 +155,6 @@ describe('Sanity persistence', () => {
       artifacts.find((artifact) => artifact.path === 'source-evidence.md')
         ?.content,
     ).toContain('src/index.ts:1-1');
+    expect(knowledgeBaseSourceQuery).toBe('*[_type == "knowledgeDocument"]');
   });
 });
