@@ -47,6 +47,7 @@ export type PersistedDocumentCounts = {
   codeSymbol: number;
   codeRelationship: number;
   architectureOverview: number;
+  knowledgeDocument: number;
   total: number;
 };
 

@@ -3,7 +3,11 @@ import { describe, expect, it } from 'vitest';
 import { analyzeRepositoryFiles } from '@codeshen/intelligence';
 
 import { buildPersistenceDocuments } from './documents';
-import { codeFileDocumentId, repositoryDocumentId } from './ids';
+import {
+  codeFileDocumentId,
+  knowledgeDocumentId,
+  repositoryDocumentId,
+} from './ids';
 import { buildKnowledgeArtifacts } from './knowledge';
 import { persistAnalysis } from './persist';
 import type {
@@ -78,6 +82,9 @@ describe('Sanity persistence', () => {
     expect(
       codeFileDocumentId('repository-1', 'commit-sha', 'src/index.ts'),
     ).toBe(codeFileDocumentId('repository-1', 'commit-sha', 'src/index.ts'));
+    expect(
+      knowledgeDocumentId('repository-1', 'commit-sha', 'architecture'),
+    ).toBe(knowledgeDocumentId('repository-1', 'commit-sha', 'architecture'));
   });
 
   it('builds source-derived documents with commit-pinned evidence', () => {
@@ -94,6 +101,9 @@ describe('Sanity persistence', () => {
       '/blob/commit-sha/',
     );
     expect(architecture?.generatedBy).toBe('deterministic');
+    expect(
+      documents.filter((document) => document._type === 'knowledgeDocument'),
+    ).toHaveLength(3);
   });
 
   it('replaces the same document IDs on repeated persistence', async () => {
@@ -109,7 +119,8 @@ describe('Sanity persistence', () => {
       codeSymbol: 1,
       codeRelationship: 1,
       architectureOverview: 1,
-      total: 5,
+      knowledgeDocument: 3,
+      total: 8,
     });
   });
 

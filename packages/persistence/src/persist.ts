@@ -37,18 +37,21 @@ function countDocuments(documents: SanityDocument[]): PersistedDocumentCounts {
   const codeSymbol = count('codeSymbol');
   const codeRelationship = count('codeRelationship');
   const architectureOverview = count('architectureOverview');
+  const knowledgeDocument = count('knowledgeDocument');
   return {
     repository,
     codeFile,
     codeSymbol,
     codeRelationship,
     architectureOverview,
+    knowledgeDocument,
     total:
       repository +
       codeFile +
       codeSymbol +
       codeRelationship +
-      architectureOverview,
+      architectureOverview +
+      knowledgeDocument,
   };
 }
 

@@ -12,8 +12,10 @@ import {
   codeFileDocumentId,
   codeRelationshipDocumentId,
   codeSymbolDocumentId,
+  knowledgeDocumentId,
   repositoryDocumentId,
 } from './ids';
+import { buildKnowledgeArtifacts } from './knowledge';
 import type {
   AnalysisPersistenceInput,
   SanityDocument,
@@ -156,6 +158,33 @@ function architectureDocument(
   };
 }
 
+function knowledgeDocuments(
+  input: AnalysisPersistenceInput,
+  repositoryId: string,
+): SanityDocument[] {
+  return buildKnowledgeArtifacts(input.ingested, input.intelligence).map(
+    (artifact) => ({
+      _id: knowledgeDocumentId(
+        repositoryId,
+        input.ingested.commitSha,
+        artifact.documentType,
+      ),
+      _type: 'knowledgeDocument',
+      repository: repositoryReference(repositoryId),
+      title: artifact.title,
+      documentType: artifact.documentType,
+      path: artifact.path,
+      content: artifact.content,
+      commitSha: artifact.commitSha,
+      generatedAt: new Date().toISOString(),
+      generatedBy: 'deterministic',
+      source: 'deterministic-analysis',
+      analysisId: input.analysisId,
+      sourceEvidence: artifact.sourceEvidence.map(evidence),
+    }),
+  );
+}
+
 export function buildPersistenceDocuments(
   input: AnalysisPersistenceInput,
 ): SanityDocument[] {
@@ -200,5 +229,6 @@ export function buildPersistenceDocuments(
     ...symbolDocuments,
     ...relationshipDocuments,
     architectureDocument(input, repositoryId),
+    ...knowledgeDocuments(input, repositoryId),
   ];
 }

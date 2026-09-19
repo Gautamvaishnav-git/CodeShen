@@ -8,8 +8,10 @@ import type { IngestedRepository } from '@codeshen/ingestion';
 export type KnowledgeArtifact = {
   path: string;
   title: string;
+  documentType: 'repository-overview' | 'architecture' | 'source-evidence';
   commitSha: string;
   content: string;
+  sourceEvidence: SourceEvidence[];
 };
 
 function evidenceLine(evidence: SourceEvidence): string {
@@ -42,18 +44,26 @@ export function buildKnowledgeArtifacts(
     .slice(0, 100)
     .map(evidenceLine)
     .join('\n');
+  const sourceEvidence = files.flatMap((file) => [
+    ...file.symbols.map((symbol) => symbol.evidence),
+    ...file.imports.map((codeImport) => codeImport.evidence),
+  ]);
 
   return [
     {
       path: 'repository-overview.md',
       title: 'Repository Overview',
+      documentType: 'repository-overview',
       commitSha: repository.commitSha,
+      sourceEvidence: [],
       content: `${frontMatter('Repository Overview', repository)}# ${repository.repository.fullName}\n\n${repository.repository.description ?? 'No repository description was provided.'}\n\nAnalyzed commit: \`${repository.commitSha}\`.\n\nFiles analyzed: ${repository.files.length}.\n\nThis document contains deterministic source-derived facts only.\n`,
     },
     {
       path: 'architecture.md',
       title: 'Architecture',
+      documentType: 'architecture',
       commitSha: repository.commitSha,
+      sourceEvidence,
       content: `${frontMatter('Architecture', repository)}# Architecture\n\n## Languages\n\n${[
         ...new Set(files.map((file) => file.language)),
       ]
@@ -66,7 +76,9 @@ export function buildKnowledgeArtifacts(
     {
       path: 'source-evidence.md',
       title: 'Source Evidence',
+      documentType: 'source-evidence',
       commitSha: repository.commitSha,
+      sourceEvidence,
       content: `${frontMatter('Source Evidence', repository)}# Source Evidence\n\nEvery entry below links to commit-pinned source.\n\n${evidence || '- No symbol or import evidence detected.'}\n`,
     },
   ];

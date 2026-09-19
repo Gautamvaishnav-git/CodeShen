@@ -46,3 +46,11 @@ export function architectureOverviewDocumentId(
 ): string {
   return `architectureOverview-${digest(`${repositoryId}:${commitSha}`)}`;
 }
+
+export function knowledgeDocumentId(
+  repositoryId: string,
+  commitSha: string,
+  documentType: string,
+): string {
+  return `knowledgeDocument-${digest(`${repositoryId}:${commitSha}:${documentType}`)}`;
+}
