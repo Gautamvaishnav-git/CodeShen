@@ -1,0 +1,19 @@
+{
+  "name": "@codeshen/persistence",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@codeshen/config": "workspace:*",
+    "@codeshen/ingestion": "workspace:*",
+    "@codeshen/intelligence": "workspace:*",
+    "@sanity/client": "^7.27.0"
+  }
+}

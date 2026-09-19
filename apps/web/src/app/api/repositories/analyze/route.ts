@@ -3,10 +3,7 @@ import { z } from 'zod';
 
 import { parsePublicRepositoryUrl } from '@codeshen/ingestion';
 
-import {
-  analysisState,
-  createIngestionService,
-} from '../../../../lib/analysis';
+import { analysisState, runAnalysis } from '../../../../lib/analysis';
 
 const requestSchema = z.object({ url: z.string().trim().min(1) });
 
@@ -25,11 +22,9 @@ export async function POST(request: Request) {
     const reference = parsePublicRepositoryUrl(parsedBody.data.url);
     const analysis = analysisState.create(reference.url);
 
-    void createIngestionService()
-      .ingest(reference.url, (progress) =>
-        analysisState.update(analysis.id, progress),
-      )
-      .catch((error: unknown) => analysisState.markFailed(analysis.id, error));
+    void runAnalysis(reference.url, analysis.id, (progress) =>
+      analysisState.update(analysis.id, progress),
+    ).catch((error: unknown) => analysisState.markFailed(analysis.id, error));
 
     return NextResponse.json(
       { analysisId: analysis.id, status: analysis.status },

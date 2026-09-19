@@ -6,6 +6,7 @@ const envSchema = z.object({
   SANITY_DATASET: z.string().min(1),
   SANITY_API_VERSION: z.string().min(1),
   SANITY_API_TOKEN: z.string().optional(),
+  SANITY_WRITE_TOKEN: z.string().optional(),
   SANITY_ORGANIZATION_ID: z.string().optional(),
   SANITY_ORGANIZATION_TOKEN: z.string().optional(),
   SANITY_CONTEXT_DATASET_URL: z.string().url().optional(),

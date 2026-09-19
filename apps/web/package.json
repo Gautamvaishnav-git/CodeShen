@@ -13,6 +13,8 @@
   "dependencies": {
     "@codeshen/config": "workspace:*",
     "@codeshen/ingestion": "workspace:*",
+    "@codeshen/intelligence": "workspace:*",
+    "@codeshen/persistence": "workspace:*",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

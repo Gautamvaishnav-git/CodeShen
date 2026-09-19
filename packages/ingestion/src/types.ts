@@ -7,7 +7,14 @@ export const ANALYSIS_STATUSES = [
 export type AnalysisStatus = (typeof ANALYSIS_STATUSES)[number];
 
 export type AnalysisPhase =
-  'validating' | 'metadata' | 'tree' | 'filtering' | 'contents' | 'complete';
+  | 'validating'
+  | 'metadata'
+  | 'tree'
+  | 'filtering'
+  | 'contents'
+  | 'intelligence'
+  | 'persisting'
+  | 'complete';
 
 export type AnalysisProgress = {
   status: AnalysisStatus;

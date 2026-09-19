@@ -73,7 +73,11 @@ export class OctokitRepositoryClient implements GitHubRepositoryClient {
     });
     const file = response.data;
 
-    if (Array.isArray(file) || file.type !== 'file' || !file.content) {
+    if (
+      Array.isArray(file) ||
+      file.type !== 'file' ||
+      typeof file.content !== 'string'
+    ) {
       throw new Error(`Expected a file response for ${path}.`);
     }
 
