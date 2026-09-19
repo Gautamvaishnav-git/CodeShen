@@ -1,0 +1,21 @@
+{
+  "name": "@codeshen/studio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "sanity build",
+    "dev": "sanity dev",
+    "lint": "eslint .",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@codeshen/config": "workspace:*",
+    "sanity": "^4.0.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@codeshen/typescript-config": "workspace:*",
+    "eslint": "^9.0.0"
+  }
+}

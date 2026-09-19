@@ -1,0 +1,22 @@
+{
+  "name": "codeshen",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --recursive build",
+    "dev": "pnpm --parallel --filter @codeshen/web --filter @codeshen/studio dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "pnpm --recursive lint",
+    "test": "vitest run",
+    "typecheck": "pnpm --recursive typecheck"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^24.0.0",
+    "prettier": "^3.6.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.2.0"
+  },
+  "packageManager": "pnpm@10.30.3"
+}

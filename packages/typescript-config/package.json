@@ -1,0 +1,10 @@
+{
+  "name": "@codeshen/typescript-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./tsconfig.json",
+    "./package.json": "./package.json"
+  }
+}
