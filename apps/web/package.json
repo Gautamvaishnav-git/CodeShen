@@ -11,22 +11,25 @@
     "typecheck": "tsc --project tsconfig.json"
   },
   "dependencies": {
+    "@ai-sdk/google": "^4.0.76",
+    "@ai-sdk/mcp": "^2.0.54",
     "@codeshen/config": "workspace:*",
     "@codeshen/ingestion": "workspace:*",
     "@codeshen/intelligence": "workspace:*",
     "@codeshen/persistence": "workspace:*",
+    "ai": "^7.0.107",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "@codeshen/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@codeshen/typescript-config": "workspace:*",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.0.0",
-    "tailwindcss": "^4.0.0",
-    "@tailwindcss/postcss": "^4.0.0"
+    "tailwindcss": "^4.0.0"
   }
 }

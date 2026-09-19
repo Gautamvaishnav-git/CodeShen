@@ -11,7 +11,9 @@ const envSchema = z.object({
   SANITY_ORGANIZATION_TOKEN: z.string().optional(),
   SANITY_CONTEXT_DATASET_URL: z.string().url().optional(),
   SANITY_CONTEXT_KB_URL: z.string().url().optional(),
+  SANITY_KNOWLEDGE_BASE_ID: z.string().min(1).optional(),
   GOOGLE_GENERATIVE_AI_API_KEY: z.string().optional(),
+  GOOGLE_GENERATIVE_AI_MODEL: z.string().min(1).optional(),
 });
 
 export function parseEnv(input: Record<string, string | undefined>) {
