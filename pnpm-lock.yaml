@@ -1,5 +1,5 @@
-Warning: truncated output (original token count: 119324)
-Total output lines: 17187
+Warning: truncated output (original token count: 119626)
+Total output lines: 17229
 
 lockfileVersion: '9.0'
 
@@ -53,6 +53,9 @@ importers:
       '@codeshen/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@codeshen/ingestion':
+        specifier: workspace:*
+        version: link:../../packages/ingestion
       next:
         specifier: ^16.0.0
         version: 16.3.5(@babel/core@7.29.7)(@types/node@24.13.6)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -62,6 +65,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.3.0(react@19.3.0)
+      zod:
+        specifier: ^4.0.0
+        version: 4.6.5
     devDependencies:
       '@codeshen/typescript-config':
         specifier: workspace:*
@@ -97,6 +103,15 @@ importers:
       eslint:
         specifier: ^9.0.0
         version: 9.39.5(jiti@2.7.0)
+
+  packages/ingestion:
+    dependencies:
+      '@octokit/rest':
+        specifier: ^22.0.0
+        version: 22.0.1
+      zod:
+        specifier: ^4.0.0
+        version: 4.6.5
 
   packages/typescript-config: {}
 
@@ -1973,19 +1988,7 @@ packages:
     engines: { node: '>=23.5.0 || ^22.13.0 || ^20.17.0' }
     peerDependencies:
       '@types/node': '>=18'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-
-  '@inquirer/external-editor@1.0.3':
-    resolution:
-      {
-        integrity: sha512-RWbSrDiYmO4LbejWY7ttpxczuwQyZLBUyygsA9Nsv95hpzUWwnNTVQmAq3xuh7vNwCp07UTmE5i11XAEExx4RA==,
-      }
-    engines: { node: '>=18' }
-    peerDependencies:
-      '@types/node': '>=18'
-    peerDep…89324 tokens truncated…insics: 1.1.0
+    p…89626 tokens truncated…insics: 1.1.0
 
   get-it@8.8.3:
     dependencies:
