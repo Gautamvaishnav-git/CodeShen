@@ -16,6 +16,7 @@ export const repository = defineType({
       type: 'string',
     }),
     defineField({ name: 'commitSha', title: 'Commit SHA', type: 'string' }),
+    defineField({ name: 'analysisId', title: 'Analysis ID', type: 'string' }),
     defineField({ name: 'description', title: 'Description', type: 'text' }),
     defineField({
       name: 'languages',
@@ -35,6 +36,14 @@ export const repository = defineType({
       type: 'string',
       options: { list: ['queued', 'analyzing', 'ready', 'failed'] },
     }),
+    defineField({ name: 'progress', title: 'Progress', type: 'number' }),
+    defineField({
+      name: 'filesProcessed',
+      title: 'Files Processed',
+      type: 'number',
+    }),
+    defineField({ name: 'totalFiles', title: 'Total Files', type: 'number' }),
+    defineField({ name: 'error', title: 'Error', type: 'text' }),
     defineField({ name: 'analyzedAt', title: 'Analyzed At', type: 'datetime' }),
   ],
 });

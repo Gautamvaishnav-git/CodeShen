@@ -15,6 +15,8 @@ export const codeFile = defineType({
     defineField({ name: 'language', title: 'Language', type: 'string' }),
     defineField({ name: 'size', title: 'Size', type: 'number' }),
     defineField({ name: 'sha', title: 'SHA', type: 'string' }),
+    defineField({ name: 'commitSha', title: 'Commit SHA', type: 'string' }),
+    defineField({ name: 'analysisId', title: 'Analysis ID', type: 'string' }),
     defineField({ name: 'summary', title: 'Summary', type: 'text' }),
     defineField({ name: 'content', title: 'Content', type: 'text' }),
     defineField({ name: 'sourceUrl', title: 'Source URL', type: 'url' }),

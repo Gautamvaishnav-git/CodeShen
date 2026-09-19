@@ -1,5 +1,7 @@
 import { defineField, defineType } from 'sanity';
 
+import { evidenceFields } from './evidence';
+
 export const codeSymbol = defineType({
   name: 'codeSymbol',
   title: 'Code Symbol',
@@ -24,5 +26,12 @@ export const codeSymbol = defineType({
     defineField({ name: 'endLine', title: 'End Line', type: 'number' }),
     defineField({ name: 'exported', title: 'Exported', type: 'boolean' }),
     defineField({ name: 'summary', title: 'Summary', type: 'text' }),
+    defineField({ name: 'commitSha', title: 'Commit SHA', type: 'string' }),
+    defineField({
+      name: 'evidence',
+      title: 'Evidence',
+      type: 'object',
+      fields: evidenceFields,
+    }),
   ],
 });
