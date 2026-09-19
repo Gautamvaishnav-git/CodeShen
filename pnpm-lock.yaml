@@ -1,5 +1,5 @@
-Warning: truncated output (original token count: 120397)
-Total output lines: 17346
+Warning: truncated output (original token count: 120570)
+Total output lines: 17359
 
 lockfileVersion: '9.0'
 
@@ -34,9 +34,15 @@ importers:
       '@codeshen/config':
         specifier: workspace:*
         version: link:../../packages/config
+      react:
+        specifier: ^19.0.0
+        version: 19.3.0
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.3.0(react@19.3.0)
       sanity:
         specifier: ^4.0.0
-        version: 4.22.1(@emotion/is-prop-valid@1.4.0)(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/node@24.13.6)(@types/react@19.3.0)(jiti@2.7.0)(lightningcss@1.32.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(yaml@2.9.1)
+        version: 4.22.1(@emotion/is-prop-valid@1.4.0)(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/node@24.13.6)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(lightningcss@1.32.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(yaml@2.9.1)
       styled-components:
         specifier: ^6.1.15
         version: 6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -44,6 +50,12 @@ importers:
       '@codeshen/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.3.0(@types/react@19.3.0)
       eslint:
         specifier: ^9.0.0
         version: 9.39.5(jiti@2.7.0)
@@ -1976,30 +1988,7 @@ packages:
       {
         integrity: sha512-YsKkS2q63IiLtaDK/9nqzdComN97SDQrmKiyNggN+ceP4ty+Z6VwyTz3FpjeUWeW1Efss2xHFKCC9sx7hnrsxg==,
       }
-    engines: { node: '>=23.5.0 || ^22.13.0 || ^20.17.0' }
-    peerDependencies:
-      '@types/node': '>=18'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-
-  '@inquirer/expand@4.0.23':
-    resolution:
-      {
-        integrity: sha512-nRzdOyFYnpeYTTR2qFwEVmIWypzdAx/sIkCMeTNTcflFOovfqUk+HcFhQQVBftAh9gmGrpFj6QcGEqrDMDOiew==,
-      }
-    engines: { node: '>=18' }
-    p…90397 tokens truncated…lor
-
-  glob-parent@5.1.2:
-    dependencies:
-      is-glob: 4.0.3
-
-  glob-parent@6.0.2:
-    dependencies:
-      is-glob: 4.0.3
-
-  glob@10.5.0:
+    engines: { node: '>=23.5…90570 tokens truncated….0:
     dependencies:
       foreground-child: 3.3.1
       jackspeak: 3.4.3
@@ -3547,7 +3536,7 @@ packages:
 
   safer-buffer@2.1.2: {}
 
-  sanity@4.22.1(@emotion/is-prop-valid@1.4.0)(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/node@24.13.6)(@types/react@19.3.0)(jiti@2.7.0)(lightningcss@1.32.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(yaml@2.9.1):
+  sanity@4.22.1(@emotion/is-prop-valid@1.4.0)(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/node@24.13.6)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(lightningcss@1.32.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(yaml@2.9.1):
     dependencies:
       '@date-fns/tz': 1.5.0
       '@dnd-kit/core': 6.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -3556,7 +3545,7 @@ packages:
       '@dnd-kit/utilities': 3.2.2(react@19.3.0)
       '@isaacs/ttlcache': 1.4.1
       '@juggle/resize-observer': 3.4.0
-      '@mux/mux-player-react': 3.13.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@mux/mux-player-react': 3.13.4(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@portabletext/block-tools': 4.1.11(@types/react@19.3.0)
       '@portabletext/editor': 3.3.19(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rxjs@7.8.2)
       '@portabletext/patches': 2.0.6
@@ -3588,7 +3577,7 @@ packages:
       '@sanity/migrate': 4.22.1(@types/react@19.3.0)
       '@sanity/mutator': 4.22.1(@types/react@19.3.0)
       '@sanity/presentation-comlink': 2.2.3(@sanity/types@4.22.1(@types/react@19.3.0))
-      '@sanity/preview-url-secret': 3.0.0(@sanity/client@7.27.0)(@sanity/icons@3.8.0(react@19.3.0))(sanity@4.22.1(@emotion/is-prop-valid@1.4.0)(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/node@24.13.6)(@types/react@19.3.0)(jiti@2.7.0)(lightningcss@1.32.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(yaml@2.9.1))
+      '@sanity/preview-url-secret': 3.0.0(@sanity/client@7.27.0)(@sanity/icons@3.8.0(react@19.3.0))(sanity@4.22.1(@emotion/is-prop-valid@1.4.0)(@portabletext/sanity-bridge@1.2.14(@types/react@19.3.0))(@types/node@24.13.6)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(lightningcss@1.32.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@5.9.3)(yaml@2.9.1))
       '@sanity/schema': 4.22.1(@types/react@19.3.0)
       '@sanity/sdk': 2.1.2(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))
       '@sanity/telemetry': 0.8.1(react@19.3.0)
